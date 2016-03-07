@@ -26,6 +26,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioManager;
 import android.media.session.MediaSessionLegacyHelper;
 import android.os.Handler;
 import android.os.Message;
@@ -54,6 +55,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int MODE_ALARMS_ONLY = 601;
     private static final int MODE_PRIORITY_ONLY = 602;
     private static final int MODE_NONE = 603;
+    private static final int MODE_VIBRATE = 604;
+    private static final int MODE_RING = 605;
 
     private static final int GESTURE_WAKELOCK_DURATION = 3000;
 
@@ -64,11 +67,14 @@ public class KeyHandler implements DeviceKeyHandler {
         sSupportedSliderModes.put(MODE_PRIORITY_ONLY,
                 Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS);
         sSupportedSliderModes.put(MODE_NONE, Settings.Global.ZEN_MODE_OFF);
+        sSupportedSliderModes.put(MODE_VIBRATE, AudioManager.RINGER_MODE_VIBRATE);
+        sSupportedSliderModes.put(MODE_RING, AudioManager.RINGER_MODE_NORMAL);
     }
 
     private final Context mContext;
     private final PowerManager mPowerManager;
     private final NotificationManager mNotificationManager;
+    private final AudioManager mAudioManager;
     private EventHandler mEventHandler;
     private SensorManager mSensorManager;
     private Sensor mProximitySensor;
@@ -84,6 +90,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mNotificationManager
                 = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mEventHandler = new EventHandler();
+        mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
 
