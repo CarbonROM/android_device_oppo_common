@@ -52,6 +52,8 @@
     <string name="notification_slider_mode_total_silence">Total silence</string>
     <string name="notification_slider_mode_alarms_only">Alarms only</string>
     <string name="notification_slider_mode_priority_only">Priority only</string>
-    <string name="notification_slider_mode_none">None</string>
+    <string name="notification_slider_mode_none">All notifications</string>
     <string name="buttons_dashboard_summary">Alert Slider Settings</string>
+    <string name="notification_slider_mode_vibrate">Vibrate</string>
+    <string name="notification_slider_mode_ring">Ring</string>
 </resources>
