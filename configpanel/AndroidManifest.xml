@@ -16,7 +16,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.system"
-          package="com.cyanogenmod.settings.device"
+          package="org.carbonrom.settings.device"
           android:versionCode="6"
           android:versionName="2.4" >
 
@@ -38,7 +38,7 @@
 
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="com.cyanogenmod.settings.device"
+            android:authorities="org.carbonrom.settings.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"
