@@ -20,12 +20,12 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Keyhandler
 PRODUCT_PACKAGES += \
     ConfigPanel \
-    com.cyanogenmod.keyhandler
+    org.carbonrom.keyhandler
 
-PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+PRODUCT_SYSTEM_SERVER_JARS += org.carbonrom.keyhandler
 
 # never dexopt the keyhandler
-$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+$(call add-product-dex-preopt-module-config,org.carbonrom.keyhandler,disable)
 
 # Recovery
 PRODUCT_PACKAGES += \
