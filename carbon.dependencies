@@ -2,6 +2,7 @@
   {
     "remote"      : "lineage",
     "repository"  : "LineageOS/android_device_qcom_common",
-    "target_path" : "device/qcom/common"
+    "target_path" : "device/qcom/common",
+    "revision"    : "cm-14.1"
   }
 ]
