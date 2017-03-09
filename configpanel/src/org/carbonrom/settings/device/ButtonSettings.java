@@ -17,12 +17,12 @@
 package org.carbonrom.settings.device;
 
 import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.Preference;
 
 import org.carbonrom.settings.device.utils.Constants;
 import org.carbonrom.settings.device.utils.FileUtils;
 import org.carbonrom.settings.device.utils.NodePreferenceActivity;
-
-import org.cyanogenmod.internal.util.ScreenType;
 
 public class ButtonSettings extends NodePreferenceActivity {
     @Override
