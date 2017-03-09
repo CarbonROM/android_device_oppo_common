@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.carbonrom.settings.device;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -45,7 +45,7 @@ import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 
-import com.cyanogenmod.settings.device.utils.Constants;
+import org.carbonrom.settings.device.utils.Constants;
 
 import java.util.UUID;
 

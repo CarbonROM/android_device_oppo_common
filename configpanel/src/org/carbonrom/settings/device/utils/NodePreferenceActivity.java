@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device.utils;
+package org.carbonrom.settings.device.utils;
 
 import android.os.Bundle;
 import android.preference.Preference;
@@ -27,8 +27,8 @@ import android.view.MenuItem;
 
 import java.io.File;
 
-import org.cyanogenmod.internal.util.FileUtils;
-import org.cyanogenmod.internal.util.ScreenType;
+import org.carbonrom.settings.device.utils.FileUtils;
+import org.carbonrom.settings.device.utils.ScreenType;
 
 public class NodePreferenceActivity extends PreferenceActivity
         implements OnPreferenceChangeListener {

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.carbonrom.settings.device;
 
 import android.os.Bundle;
 
-import com.cyanogenmod.settings.device.utils.NodePreferenceActivity;
+import org.carbonrom.settings.device.utils.NodePreferenceActivity;
 
-import org.cyanogenmod.internal.util.ScreenType;
+import org.carbonrom.settings.device.utils.ScreenType;
 
 public class ButtonSettings extends NodePreferenceActivity {
     @Override
