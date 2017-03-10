@@ -23,7 +23,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
-    <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
 
     <uses-sdk
@@ -66,6 +65,20 @@
         </activity>
 
         <activity
+            android:name=".TouchscreenGestureSettings"
+            android:label="@string/screen_gestures_panel_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.device" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_settings_gestures" />
+        </activity>
+
+        <activity
             android:name=".GesturePadSettings"
             android:label="@string/backpad_panel_title">
             <intent-filter>
@@ -92,9 +105,10 @@
 
         <receiver android:name=".Startup" >
             <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PRE_BOOT_COMPLETED" />
                 <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
                 <action android:name="cyanogenmod.intent.action.GESTURE_CAMERA" />
-                <action android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
             </intent-filter>
         </receiver>
     </application>

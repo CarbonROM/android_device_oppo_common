@@ -24,4 +24,5 @@
 
     <!-- Names of the key handler classes -->
     <string name="config_deviceKeyHandlerClass" translatable="false">org.carbonrom.settings.device.KeyHandler</string>
+
 </resources>
