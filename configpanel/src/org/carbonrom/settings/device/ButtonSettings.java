@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,35 +14,39 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
-
-import com.cyanogenmod.settings.device.utils.NodePreferenceActivity;
+package org.carbonrom.settings.device;
 
 import android.os.Bundle;
-import android.provider.Settings;
+import android.preference.ListPreference;
+import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.SwitchPreference;
 
-public class TouchscreenGestureSettings extends NodePreferenceActivity {
-    private static final String KEY_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
+import org.carbonrom.settings.device.utils.Constants;
+import org.carbonrom.settings.device.utils.FileUtils;
+import org.carbonrom.settings.device.utils.NodePreferenceActivity;
 
-    private SwitchPreference mHapticFeedback;
+public class ButtonSettings extends NodePreferenceActivity {
+    private static final String KEY_IGNORE_AUTO = "notification_slider_ignore_auto";
+    private static final String PROP_IGNORE_AUTO = "persist.op.slider_ignore_auto";
+
+    private SwitchPreference mIgnoreAuto;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.touchscreen_panel);
+        addPreferencesFromResource(R.xml.button_panel);
 
-        mHapticFeedback = (SwitchPreference) findPreference(KEY_HAPTIC_FEEDBACK);
-        mHapticFeedback.setOnPreferenceChangeListener(this);
+        mIgnoreAuto = (SwitchPreference) findPreference(KEY_IGNORE_AUTO);
+        mIgnoreAuto.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
-        if (KEY_HAPTIC_FEEDBACK.equals(key)) {
+        if (KEY_IGNORE_AUTO.equals(key)) {
             final boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(), KEY_HAPTIC_FEEDBACK, value ? 1 : 0);
+            SystemProperties.set(PROP_IGNORE_AUTO, value ? "true" : "false");
             return true;
         }
 
@@ -53,10 +57,6 @@ public class TouchscreenGestureSettings extends NodePreferenceActivity {
     protected void onResume() {
         super.onResume();
 
-        // Remove padding around the listview from all devices
-        getListView().setPadding(0, 0, 0, 0);
-
-        mHapticFeedback.setChecked(
-                Settings.System.getInt(getContentResolver(), KEY_HAPTIC_FEEDBACK, 1) != 0);
+        mIgnoreAuto.setChecked(SystemProperties.get(PROP_IGNORE_AUTO).equals("true"));
     }
 }

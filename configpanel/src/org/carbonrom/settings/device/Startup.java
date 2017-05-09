@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.carbonrom.settings.device;
 
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
@@ -42,8 +42,8 @@ import android.view.KeyEvent;
 
 import java.io.File;
 
-import com.cyanogenmod.settings.device.utils.Constants;
-import com.cyanogenmod.settings.device.utils.FileUtils;
+import org.carbonrom.settings.device.utils.Constants;
+import org.carbonrom.settings.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 

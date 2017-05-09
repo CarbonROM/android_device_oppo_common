@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device.utils;
+package org.carbonrom.settings.device.utils;
 
 import android.util.Log;
 
