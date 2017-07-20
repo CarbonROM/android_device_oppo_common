@@ -1,0 +1,4 @@
+{
+  "pushCert": "certificate version 0.1\npusher 9604B6AC 1500572515 +0530\npushee ssh://review.carbonrom.org:29418/CarbonROM/android_device_oppo_common\nnonce 1500572513-EA0AF68D6F321B622DCF2F0B99CB8F7350EDA455\n\n0000000000000000000000000000000000000000 5659dda8aa03db2965f4b1b61046bb8b7ec8ec9b refs/for/cr-5.1\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2\n\niQEcBAABCAAGBQJZcOtjAAoJEJS8URaWBLasr8EH/iFWtj8URdo2JfCzAoQ9RxPB\nZIGjeqXwxsSDf1Gh1mKh458rV6kWSBmQamneAS7CTpdsT6iJBhVp4jQu1dBaF1Zt\nGp/mlnw8na/A67VzjSWJnF/uwCU/bOZC5V7M4L9ObqZA7K7KnZdfqHg2iwPyljZB\npvWmoSCzIXP3kAe5Vd7FGSCND3mHop1DHSO/225k2v3z00wSj6h2U6QoeYkRo9wG\nlnqHIgQMlpCibkn5lxvI/VYar01N6vRZ8T6Hbxdy3NA+YTWa+gx+bdKpzUYtvEuU\n4ZN1plVEQeWeAIJk2a9O2R5mVdRu1E/x+i/MxgAJWsgVVSzHfOJrcCbQXA2B5cM\u003d\n\u003de4Tc\n-----END PGP SIGNATURE-----\n",
+  "comments": []
+}
