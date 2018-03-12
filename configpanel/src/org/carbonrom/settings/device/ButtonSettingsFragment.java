@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.carbonrom.settings.device;
 
 import android.os.Bundle;
 import android.support.v14.preference.PreferenceFragment;
@@ -27,8 +27,8 @@ import android.support.v7.preference.PreferenceGroup;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
-import org.lineageos.internal.util.FileUtils;
-import org.lineageos.settings.device.utils.Constants;
+import com.android.internal.util.cr.FileUtils;
+import org.carbonrom.settings.device.utils.Constants;
 
 public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
