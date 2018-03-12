@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.carbonrom.settings.device;
 
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
@@ -34,8 +34,8 @@ import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import org.lineageos.internal.util.FileUtils;
-import org.lineageos.settings.device.utils.Constants;
+import com.android.internal.util.cr.FileUtils;
+import org.carbonrom.settings.device.utils.Constants;
 
 public class Startup extends BroadcastReceiver {
 
@@ -44,7 +44,6 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-        if (lineageos.content.Intent.ACTION_INITIALIZE_LINEAGE_HARDWARE.equals(action)) {
             // Disable button settings if needed
             if (!hasButtonProcs()) {
                 disableComponent(context, ButtonSettingsActivity.class.getName());
@@ -76,7 +75,7 @@ public class Startup extends BroadcastReceiver {
             } else {
                 updateOClickServiceState(context);
             }
-        } else if (intent.getAction().equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+	if (intent.getAction().equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
             if (hasOClick()) {
                 updateOClickServiceState(context);
             }
