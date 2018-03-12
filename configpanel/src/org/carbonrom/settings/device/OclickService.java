@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.carbonrom.settings.device;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -46,7 +46,7 @@ import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 
-import org.lineageos.settings.device.utils.Constants;
+import org.carbonrom.settings.device.utils.Constants;
 
 import java.util.UUID;
 
@@ -283,7 +283,7 @@ public class OclickService extends Service implements
                         }
                     }
 
-                    Intent keyIntent = new Intent("org.lineageos.device.oppo.ACTION_OCLICK_KEY");
+                    Intent keyIntent = new Intent("org.carbonrom.device.oppo.ACTION_OCLICK_KEY");
                     keyIntent.putExtra("key", key);
                     keyIntent.putExtra("action", action);
                     sendBroadcast(keyIntent);
