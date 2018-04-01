@@ -66,19 +66,7 @@ public class Startup extends BroadcastReceiver {
                             " failed while restoring saved preference values");
                     }
                 }
-            }
 
-            // Disable O-Click settings if needed
-            if (!hasOClick()) {
-                disableComponent(context, BluetoothInputSettings.class.getName());
-                disableComponent(context, OclickService.class.getName());
-            } else {
-                updateOClickServiceState(context);
-            }
-	if (intent.getAction().equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
-            if (hasOClick()) {
-                updateOClickServiceState(context);
-            }
         }
     }
 
@@ -87,10 +75,6 @@ public class Startup extends BroadcastReceiver {
                 FileUtils.fileExists(Constants.NOTIF_SLIDER_MIDDLE_NODE) &&
                 FileUtils.fileExists(Constants.NOTIF_SLIDER_BOTTOM_NODE)) ||
                 FileUtils.fileExists(Constants.BUTTON_SWAP_NODE);
-    }
-
-    static boolean hasOClick() {
-        return Build.MODEL.equals("N1") || Build.MODEL.equals("N3");
     }
 
     private void disableComponent(Context context, String component) {
@@ -112,20 +96,4 @@ public class Startup extends BroadcastReceiver {
         }
     }
 
-    private void updateOClickServiceState(Context context) {
-        BluetoothManager btManager = (BluetoothManager)
-                context.getSystemService(Context.BLUETOOTH_SERVICE);
-        BluetoothAdapter adapter = btManager.getAdapter();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean shouldStartService = adapter != null
-                && adapter.getState() == BluetoothAdapter.STATE_ON
-                && prefs.contains(Constants.OCLICK_DEVICE_ADDRESS_KEY);
-        Intent serviceIntent = new Intent(context, OclickService.class);
-
-        if (shouldStartService) {
-            context.startService(serviceIntent);
-        } else {
-            context.stopService(serviceIntent);
-        }
-    }
 }
