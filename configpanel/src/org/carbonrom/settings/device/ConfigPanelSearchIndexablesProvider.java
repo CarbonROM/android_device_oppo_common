@@ -61,9 +61,6 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
         if (Startup.hasButtonProcs() /* show button panel */) {
             cursor.addRow(generateResourceRef(INDEXABLE_RES[SEARCH_IDX_BUTTON_PANEL]));
         }
-        if (Startup.hasOClick() /* show oclick panel */) {
-            cursor.addRow(generateResourceRef(INDEXABLE_RES[SEARCH_IDX_OCLICK_PANEL]));
-        }
         return cursor;
     }
 
